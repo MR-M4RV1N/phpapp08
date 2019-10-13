@@ -1,0 +1,22 @@
+{% extends "Layout/admin.twig" %}
+
+{% block page %}Editor{% endblock %}
+{% block description %}{% endblock %}
+{% block title %}show{% endblock %}
+
+{% block content %}
+    <table class="table table-bordered">
+        <tr>
+            <th width="25%">Title:</th>
+            <td>{{ item.title }}</td>
+        </tr>
+        <tr>
+            <th>Description:</th>
+            <td>{{ item.description }}</td>
+        </tr>
+    </table>
+
+    <br>
+    <a href="/admin/editor/subsub/{{ item.cat_sub }}" class="btn btn-default">back to list</a>
+    <a href="/admin/editor/subsub/edit/{{ item.id }}" class="btn btn-primary">edit</a>
+{% endblock %}

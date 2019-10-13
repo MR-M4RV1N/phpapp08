@@ -1,0 +1,35 @@
+{% extends "Layout/admin.twig" %}
+
+{% block page %}Editor{% endblock %}
+{% block description %}{% endblock %}
+{% block title %}index{% endblock %}
+
+{% block content %}
+    <table class="table table-bordered">
+        <tr>
+            <th width="5%">Id</th>
+            <th>Title</th>
+            <th width="15%" colspan="3" style="text-align:center">Actions</th>
+        </tr>
+        {% for i in item %}
+            <tr>
+                <td>{{ i.id }}</td>
+                <td><a href="/admin/editor/sub/{{ i.id }}">{{ i.title }}</a></td>
+                <td align="center">
+                    <a href="/admin/editor/cat/show/{{ i.id }}" class="btn btn-default btn-sm">show</a>
+                </td>
+                <td align="center">
+                    <a href="/admin/editor/cat/edit/{{ i.id }}" class="btn btn-primary btn-sm">edit</a>
+                </td>
+                <td align="center">
+                    <form action="/admin/editor/cat/delete/{{ i.id }}" method="post">
+                        <button type="submit" class="btn btn-danger btn-sm">delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/admin/editor/cat/create" class="btn btn-primary btn-sm">Add</a>
+{% endblock %}

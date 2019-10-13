@@ -1,0 +1,18 @@
+{% extends "Layout/admin.twig" %}
+
+{% block page %}Admin{% endblock %}
+{% block description %}it all starts here{% endblock %}
+{% block title %}category - {{ content.title }}{% endblock %}
+
+{% block content %}
+    <table class="table table-bordered">
+        <tr>
+            <td width="20%">Title:</td>
+            <td>{{ content.title }}</td>
+        </tr>
+        <tr>
+            <td width="20%">Description:</td>
+            <td>{{ content.description }}</td>
+        </tr>
+    </table>
+{% endblock %}
